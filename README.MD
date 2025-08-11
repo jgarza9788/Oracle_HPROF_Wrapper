@@ -42,129 +42,6 @@ Open and run the following ... see comments for details.
 
 ## output example
 
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset='UTF-8'>
-  
-  <title>Result Data</title>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
-  <style>
-  * { 
-    margin: 0; 
-    padding: 0; 
-  }
-  body { 
-    font: 14px/1.4 Palatino, Serif; 
-  }
-  
-  /* 
-  Generic Styling, for Desktops/Laptops 
-  */
-  table { 
-    width: 100%; 
-    border-collapse: collapse; 
-  }
-  /* Zebra striping */
-  /*
-  tr:nth-of-type(odd) { 
-    background: #eee; 
-  }
-  th { 
-    background: #333; 
-    color: white; 
-    font-weight: bold; 
-  }
-  td, th { 
-    padding: 6px; 
-    border: 1px solid #9B9B9B; 
-    text-align: left; 
-  }
-  */
-  @media 
-  only screen and (max-width: 760px),
-  (min-device-width: 768px) and (max-device-width: 1024px)  {
-    table, thead, tbody, th, td, tr { display: block; }
-    thead tr { position: absolute;top: -9999px;left: -9999px;}
-    tr { border: 1px solid #9B9B9B; }
-    td { border: none;border-bottom: 1px solid #9B9B9B; position: relative;padding-left: 50%; }
-    
-    td:before { position: absolute;top: 6px;left: 6px;width: 45%; padding-right: 10px; white-space: nowrap;}
-    
-    /*
-    Label the data
-    */
-td:nth-of-type(1):before { content: "DEPTH"; }
-td:nth-of-type(2):before { content: "PARENTSYMID"; }
-td:nth-of-type(3):before { content: "CHILDSYMID"; }
-td:nth-of-type(4):before { content: "NODE"; }
-td:nth-of-type(5):before { content: "OWNER"; }
-td:nth-of-type(6):before { content: "MODULE"; }
-td:nth-of-type(7):before { content: "TYPE"; }
-td:nth-of-type(8):before { content: "FUNCTION"; }
-td:nth-of-type(9):before { content: "LINE#"; }
-td:nth-of-type(10):before { content: "SQL_ID"; }
-td:nth-of-type(11):before { content: "SQL_TEXT"; }
-td:nth-of-type(12):before { content: "FI_INCL_US"; }
-td:nth-of-type(13):before { content: "FI_EXCL_US"; }
-td:nth-of-type(14):before { content: "FI_CALLS"; }
-  }
-  
-  /* Smartphones (portrait and landscape) ----------- */
-  @media only screen
-  and (min-device-width : 320px)
-  and (max-device-width : 480px) {
-    body { 
-      padding: 0; 
-      margin: 0; 
-      width: 320px; }
-    }
-  
-  /* iPads (portrait and landscape) ----------- */
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    body { 
-      width: 495px; 
-    }
-  }
-  
-  </style>
-  <!--<![endif]-->
-<script type="text/javascript">
-
-function search(){
-  
-  var s = document.getElementById('search').value;
-
-  rows = document.getElementById('data').getElementsByTagName('TR');
-  for(var i=0;i<rows.length;i++){
-    if ( rows[i].textContent.indexOf(s)>0  || s.length==0 ) {
-	  rows[i].style.display ='';
-    } else {
-      rows[i].style.display ='none';
-    }
-  }
-}
-
-
-var timer;
-function delayedSearch() {
-	clearTimeout(timer);
-	console.log('delay-ing')
-    timer = setTimeout(function () {
-		console.log('delay-running')
-		search();
-    }, 500);
-  }</script>
-</head>
-
-<body>
-<!--
-<div><input type="text" size="30" maxlength="1000" value="" id="search" onkeyup="delayedSearch();" /><input type="button" value="Go" onclick="lsearch();"/> </div>
--->
 <table><thead><tr>	<th>DEPTH</th>
 	<th>PARENTSYMID</th>
 	<th>CHILDSYMID</th>
@@ -404,8 +281,8 @@ function delayedSearch() {
 <td align="right">61</td>
 <td align="right">1</td>
 	</tr>
-</tbody></table>
-</body></html>
+</table>
+
 
 <!--
 Also read the LICENSE and follow it.
